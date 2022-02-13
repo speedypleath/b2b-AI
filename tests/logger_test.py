@@ -61,7 +61,7 @@ class TestMainLog(unittest.TestCase):
     def setUpClass(cls) -> None:
         path = os.path.join(os.path.dirname(__file__), "test.logs")
         sys.stdout = StringIO()
-        cls._logger = get_logger(path, level=logging.DEBUG)
+        cls._logger = get_logger(path, level=logging.DEBUG, handle_console=True)
         cls._file = open(path, "r")
         cls._logger.info("This is an info")
         cls._output = sys.stdout.getvalue()
