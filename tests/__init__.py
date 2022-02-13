@@ -1,11 +1,11 @@
 import unittest
 from tests.logger_test import TestMock, TestMainLog
 
-def create_suite():
-    suite = unittest.TestSuite()
-    suite.addTest(unittest.makeSuite(TestMock))
-    suite.addTest(unittest.makeSuite(TestMainLog))
-    return suite
-
-if __name__ == '__main__':
-    unittest.TextTestRunner(verbosity=3).run(create_suite())
+class Test(unittest.TestCase):
+    def test_all(self):           
+        testSuite = unittest.TestSuite()
+        testResult = unittest.TestResult()
+        testSuite.addTest(unittest.makeSuite(TestMock))
+        testSuite.addTest(unittest.makeSuite(TestMainLog))
+        test =  unittest.TextTestRunner(verbosity=3).run(testSuite)
+        self.assertEqual(test.wasSuccessful(), True)

@@ -2,6 +2,8 @@ import logging
 import unittest
 import time
 import os
+from io import StringIO
+import sys
 from b2b_AI.utils.logging import get_logger
 
 class MockLogHandler(logging.Handler):
@@ -58,17 +60,23 @@ class TestMainLog(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         path = os.path.join(os.path.dirname(__file__), "test.logs")
-        cls._logger = get_logger(path)
+        sys.stdout = StringIO()
+        cls._logger = get_logger(path, level=logging.DEBUG)
         cls._file = open(path, "r")
-            
+        cls._logger.info("This is an info")
+        cls._output = sys.stdout.getvalue()
+        
     @classmethod
     def tearDownClass(cls) -> None:
+        cls._file.close()
         os.remove(os.path.join(os.path.dirname(__file__), "test.logs"))
         
     def test_file_exists(self):
         self.assertTrue(os.path.join(os.path.dirname(__file__), "test.logs"))
         
-    def test_message(self):
-        self._logger.info("This is an info")
-        self.assertEqual(self._file.read(), f'["INFO" - {time.strftime("%Y-%m-%d %H:%M:%S")}]: This is an info in {os.path.realpath(__file__)}:72\n')
+    def test_message_file(self):
+        self.assertEqual(self._file.read(), f'["INFO" - {time.strftime("%Y-%m-%d %H:%M:%S")}]: This is an info in {os.path.realpath(__file__)}:66\n')
+        
+    def test_message_stdout(self):
+        self.assertEqual(self._output, f'["INFO" - {time.strftime("%Y-%m-%d %H:%M:%S")}]: This is an info in {os.path.realpath(__file__)}:66\n')
         

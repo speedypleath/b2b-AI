@@ -15,9 +15,9 @@ def get_file_handler(log_file: str):
    file_handler.setFormatter(FORMATTER)
    return file_handler
 
-def get_logger(log_file: str):
+def get_logger(log_file: str, level: int = logging.DEBUG, handle_console = False):
    logger = logging.getLogger(LOGGER_NAME)
-   logger.setLevel(logging.DEBUG)
+   logger.setLevel(level)
    logger.addHandler(get_console_handler())
    logger.addHandler(get_file_handler(log_file))
    return logger
