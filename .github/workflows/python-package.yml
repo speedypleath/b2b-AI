@@ -8,10 +8,12 @@ on:
     branches: [ master ]
     paths:
       - setup.py
+      - .github/workflows/python-package.yml
   pull_request:
     branches: [ master ]
     paths:
       - setup.py
+      - .github/workflows/python-package.yml
 
 jobs:
   build:
@@ -36,6 +38,8 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Build binary wheel and a source tarball
       run: python setup.py sdist
+    - name: Run tests 
+      run: python3 -m unittest -v tests
     - name: Publish distribution to Test PyPI
       uses: pypa/gh-action-pypi-publish@master
       with:

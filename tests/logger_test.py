@@ -71,12 +71,4 @@ class TestMainLog(unittest.TestCase):
     def test_message(self):
         self._logger.info("This is an info")
         self.assertEqual(self._file.read(), f'["INFO" - {time.strftime("%Y-%m-%d %H:%M:%S")}]: This is an info in {os.path.realpath(__file__)}:72\n')
-
-def create_suite():
-    suite = unittest.TestSuite()
-    suite.addTest(unittest.makeSuite(TestMock))
-    suite.addTest(unittest.makeSuite(TestMainLog))
-    return suite
-
-if __name__ == '__main__':
-    unittest.TextTestRunner(verbosity=3).run(create_suite())
+        
