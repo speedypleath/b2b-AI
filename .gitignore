@@ -54,3 +54,4 @@ cover/
 # Translations
 *.mo
 *.pot
+logs/
