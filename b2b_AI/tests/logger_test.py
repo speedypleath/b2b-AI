@@ -4,7 +4,7 @@ from io import StringIO
 import time
 import os
 import sys
-from b2b_ai.utils.logging import get_logger
+from ..utils.logging import get_logger
 
 
 class MockLogHandler(Handler):

@@ -2,7 +2,7 @@ from unittest import TestCase
 import os
 import time
 from mido import MidiFile
-from b2b_ai.utils.midi import in_range, next_file, normalize_data, \
+from ..utils.midi import in_range, next_file, normalize_data, \
     play_song, get_project_root, create_dir_if_not_exists
 
 class TestMidiUtils(TestCase):

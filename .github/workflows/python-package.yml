@@ -20,13 +20,11 @@ jobs:
         python3 -m pip install pylint pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with pylint
-      uses: fylein/python-pylint-github-action@v4
-      with:
-        args: pylint --rcfile=.pylintrc b2b_ai
+      run: pylint --rcfile=.pylintrc $(git ls-files '*.py')
     - name: Build binary wheel and a source tarball
       run: python3 setup.py sdist
     - name: Run tests
-      run: python3 -m unittest b2b_ai
+      run: python3 -m unittest $(git ls-files '*.py')
     - name: Publish distribution to Test PyPI
       uses: pypa/gh-action-pypi-publish@master
       with:
