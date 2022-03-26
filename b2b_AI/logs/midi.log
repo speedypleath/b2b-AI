@@ -1767,3 +1767,9 @@
 ["WARNING" - 2022-03-26 09:32:24]: DS_BL_125BPM_19.mid: 1 in /Users/speedypleath/Facultate/b2b-ai/b2b_ai/utils/midi.py:66
 ["INFO" - 2022-03-26 09:32:24]: DS_BL_125BPM_1.mid: 4 bars in file bass-8bar/2.mid in /Users/speedypleath/Facultate/b2b-ai/b2b_ai/utils/midi.py:63
 ["INFO" - 2022-03-26 09:32:24]: DS_BL_125BPM_2.mid: 8 bars in file bass-8bar/3.mid in /Users/speedypleath/Facultate/b2b-ai/b2b_ai/utils/midi.py:52
+["INFO" - 2022-03-26 10:17:48]: This is an info in /Users/speedypleath/Facultate/b2b-ai/b2b_ai/tests/logger_test.py:83
+["INFO" - 2022-03-26 10:17:48]: Directory does not exist in /Users/speedypleath/Facultate/b2b-ai/b2b_ai/utils/midi.py:31
+["INFO" - 2022-03-26 10:17:48]: DS_BL_125BPM_21.mid: 2 bars in file bass-8bar/1.mid in /Users/speedypleath/Facultate/b2b-ai/b2b_ai/utils/midi.py:49
+["WARNING" - 2022-03-26 10:17:48]: DS_BL_125BPM_19.mid: 1 in /Users/speedypleath/Facultate/b2b-ai/b2b_ai/utils/midi.py:66
+["INFO" - 2022-03-26 10:17:48]: DS_BL_125BPM_1.mid: 4 bars in file bass-8bar/2.mid in /Users/speedypleath/Facultate/b2b-ai/b2b_ai/utils/midi.py:63
+["INFO" - 2022-03-26 10:17:48]: DS_BL_125BPM_2.mid: 8 bars in file bass-8bar/3.mid in /Users/speedypleath/Facultate/b2b-ai/b2b_ai/utils/midi.py:52

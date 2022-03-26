@@ -24,7 +24,7 @@ jobs:
     - name: Build binary wheel and a source tarball
       run: python3 setup.py sdist
     - name: Run tests
-      run: python3 -m unittest $(git ls-files '*.py')
+      run: python3 -m unittest b2b_AI
     - name: Publish distribution to Test PyPI
       uses: pypa/gh-action-pypi-publish@master
       with:
