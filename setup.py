@@ -5,7 +5,7 @@ with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
 
 setup(
-    name='b2b-ai',
+    name='b2b_ai',
     version=VERSION,
     description='A package that analyses songs and converts them to MIDI files.',
     long_description=long_description,
