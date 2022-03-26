@@ -54,4 +54,10 @@ cover/
 # Translations
 *.mo
 *.pot
-logs/
+*logs/
+
+# Data
+data/
+
+.vscode/
+*.DS_Store
