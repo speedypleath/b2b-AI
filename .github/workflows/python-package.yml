@@ -39,7 +39,7 @@ jobs:
     - name: Build binary wheel and a source tarball
       run: python3 setup.py sdist
     - name: Run tests
-      run: python3 -m unittest -v tests
+      run: python3 -m unittest b2b_ai
     - name: Run lint
       run: pylint --rcfile=.pylintrc b2b_ai
     - name: Publish distribution to Test PyPI
