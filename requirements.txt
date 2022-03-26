@@ -1,3 +1,2 @@
-python>=3.10
 mido==1.2.10
 pre-commit==2.17.0
