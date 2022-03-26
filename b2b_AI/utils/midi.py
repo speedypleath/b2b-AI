@@ -12,7 +12,7 @@ os.chdir(get_project_root())
 logger = get_logger('logs/midi.log')
 
 def play_song(mid: MidiFile) -> None:
-    output = open_output()
+    output = open_output('Virtual Port', virtual=True)
     for msg in mid.play():
         output.send(msg)
     output.close()
